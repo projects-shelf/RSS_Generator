@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: shelf_rssgen_nginx
+    networks:
+      - shelf-rssgen-network
+    ports:
+      - "50048:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./front/dist:/front
+    depends_on:
+      - go
+    restart: unless-stopped
+
+  go:
+    build:
+      context: ./back
+    container_name: shelf_rssgen_go
+    networks:
+      - shelf-rssgen-network
+    volumes:
+      - ./db:/db
+    environment:
+      - TZ=UTC
+      - Gemini=APIKEY
+    restart: unless-stopped
+
+networks:
+  shelf-rssgen-network:
+    driver: bridge

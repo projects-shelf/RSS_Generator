@@ -42,6 +42,11 @@ c0044a5a6190   politepol            1.55%     148.4MiB / 3.88GiB   3.74%     98.
 f7e416a540c8   dbpolitepol          0.13%     174.6MiB / 3.88GiB   4.39%     15.8MB / 28.6MB   7.22GB / 303kB    29
 ```
 
+## Note
+
+- To use the automatic extraction feature powered by AI, a Gemini API KEY is required.
+- HTTPS connection is required to copy links to the clipboard.
+
 ## License
 
 RSS_Generatot is licensed under [MIT License](https://github.com/projects-shelf/RSS_Generator/blob/main/LICENSE).

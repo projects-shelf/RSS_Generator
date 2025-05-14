@@ -104,6 +104,7 @@ export default function EditPage() {
 			iframeDoc.addEventListener("click", (event) => {
 				event.preventDefault();
 				event.stopPropagation();
+
 				const target = event.target as Element;
 				const xpath = getXPath(target);
 				if (last_selected) {
@@ -113,7 +114,7 @@ export default function EditPage() {
 						input.dispatchEvent(new Event("input", { bubbles: true }));
 					}
 				}
-			});
+			}, true);
 		};
 
 		iframeRef.current?.addEventListener("load", onIframeLoad);

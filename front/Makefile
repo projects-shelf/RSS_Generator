@@ -1,4 +1,4 @@
-setp:
+setup:
 	bun install
 
 dev:
